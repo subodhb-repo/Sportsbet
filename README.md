@@ -10,6 +10,9 @@ setup 4 endpoints that exposes 4 uses cases mentioned in the coding excercise do
 This project implements the core use cases. It adheres to SOLID principles, allowing for easy expansion to new sports without modifying the core depth chart logic.
 It also prioritises readability and maintainability of the code.
 
+#### Sportsbet.DepthCharts.Tests
+Unit tests to cover core use cases of DepthChart.
+
 ## Assumptions
 - **Unique Player ID**: PlayerId(int) is unique identifier for a player. All lookup and removal operation rely on this id.
 - **Uniqueness per position**: A player, identified by PlayerId, can only occupy one spot on any given position in depth chart.
