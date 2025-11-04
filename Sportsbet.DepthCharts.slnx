@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Project Path="src/Sportsbet.DepthCharts.App/Sportsbet.DepthCharts.App.csproj" Id="31283e4e-45c2-4990-b0be-81a85419360c" />
+  <Project Path="src/Sportsbet.DepthCharts.Core/Sportsbet.DepthCharts.Core.csproj" />
+  <Project Path="tests/Sportsbet.DepthCharts.Tests/Sportsbet.DepthCharts.Tests.csproj" />
+</Solution>
