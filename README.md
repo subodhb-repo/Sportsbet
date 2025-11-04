@@ -38,8 +38,7 @@ The most eaiest way to execute any other such example flow is to modify this tes
 
 To run the tests follow these steps:
 - Clone the files
-- Navigate to root directory where solution file exists (.slnx).
-Can be found at - `/{ClonedDirectory}/`
+- Navigate to root directory where solution file exists (.slnx). Can be found at - `/{YourClonedDirectory}/Sportsbet`
 - Run all tests `dotnet test`
 
 ## Running the API
@@ -50,11 +49,11 @@ setup 4 endpoints that exposes 4 uses cases mentioned in the coding excercise do
 
 - Clone the Files
 - Navigate to the root directory of the app where Program.cs is located, typically at -
-`{ClonedDirectory}/src/Sportsbet.DepthCharts.App`
+`{YourClonedDirectory}/Sportsbet/src/Sportsbet.DepthCharts.App`
 - To run the Application execute the application from the root directory:
-`dotnet run --launch-profile "https"`
+`dotnet run --launch-profile "Sportsbet.DepthCharts.App"`
 
-The application will typically start on http://localhost:7224 (the port can be different). Note the address in your console output.
+The application will typically start on https://localhost:59921 (the port can be different). Note the address in your console output.
 
 ## API Endpoints
 The API is structured to separate requests by sport (nfl or mlb).
@@ -73,7 +72,7 @@ Example Body:
 	"positionDepth": 0
 }
 cURL Example (NFL):
-curl -X POST http://localhost:7224/api/nfl/player \
+curl -X POST http://localhost:59921/api/nfl/player \
     -H "Content-Type: application/json" \
     -d '{"playerId": 1, "playerName": "Bob", "position": "WR", "positionDepth": 0}'
 ```
@@ -89,7 +88,7 @@ Example Body:
  "position": "WR"
 }
 cURL Example (NFL):
-curl -X DELETE http://localhost:7224/api/nfl/player \
+curl -X DELETE http://localhost:59921/api/nfl/player \
     -H "Content-Type: application/json" \
     -d '{"playerId": 1, "position": "WR"}'
 ```
@@ -100,15 +99,15 @@ Retrieves the full depth chart for a given sport.
 ``` HTTP Method: GET
 URL: /api/{sport}/depth-chart
 cURL Example (MLB):
-curl -X GET http://localhost:7224/api/mlb/depth-chart
+curl -X GET http://localhost:59921/api/mlb/depth-chart
 Example Output:
 {
-	"WR": [
+	"1B": [
 		2,
 		1,
 		3
 	],
-	"KR": [
+	"2B": [
 		1
 	]
 }
@@ -120,7 +119,7 @@ Retrieves all players listed deeper on the depth chart than the specified player
 ``` HTTP Method: GET
 URL: /api/{sport}/players-under/{playerId}/{position}
 cURL Example (NFL): (Assuming player 10 is at the top of WR, and players 8 and 7 are below)
-curl -X GET http://localhost:7224/api/nfl/players-under/2/WR
+curl -X GET http://localhost:59921/api/nfl/players-under/2/WR
 Example Output:
 [
 	1,
